@@ -1,5 +1,5 @@
 # @ianwalter/find-key
-> A utility
+> A utility that searches through nested layers for a keyed value
 
 ## About
 
@@ -23,5 +23,6 @@ const findKey = require('@ianwalter/find-key')
 findKey(obj, 'someKeyName')
 ```
 
+&nbsp;
 
-
+ISC &copy; [Ian Walter](http://iankwalter.com)
