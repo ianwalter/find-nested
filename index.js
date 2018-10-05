@@ -1,6 +1,8 @@
 const isObj = require('is-obj')
 
-module.exports = function findKey (obj, prop) {
+const notUndefined = val => val !== undefined
+
+module.exports = function findNested (obj, prop, descriminator = notUndefined) {
   if (isObj(obj)) {
     for (let key of Object.keys(obj)) {
       let val
@@ -8,15 +10,15 @@ module.exports = function findKey (obj, prop) {
         val = obj[key]
       } else if (Array.isArray(obj[key])) {
         for (let item of obj[key]) {
-          val = findKey(item, prop)
-          if (val !== undefined) {
+          val = findNested(item, prop, descriminator)
+          if (descriminator(val)) {
             return val
           }
         }
       } else if (isObj(obj[key])) {
-        val = findKey(obj[key], prop)
+        val = findNested(obj[key], prop, descriminator)
       }
-      if (val !== undefined) {
+      if (descriminator(val)) {
         return val
       }
     }

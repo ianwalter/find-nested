@@ -1,4 +1,4 @@
-const findKey = require('../')
+const findNested = require('../')
 
 const fixture = {
   one: 1,
@@ -16,21 +16,28 @@ const fixture = {
   }
 }
 
-test('findKey can get top-level values', () => {
-  expect(findKey(fixture, 'one')).toBe(fixture.one)
-  expect(findKey(fixture, 'two')).toBe(fixture.two)
+test('findNested can get top-level values', () => {
+  expect(findNested(fixture, 'one')).toBe(fixture.one)
+  expect(findNested(fixture, 'two')).toBe(fixture.two)
 })
 
-test('findKey can get values in a nested object', () => {
-  expect(findKey(fixture, 'a')).toBe(fixture.two.a)
-  expect(findKey(fixture, 'b')).toBe(fixture.two.b)
+test('findNested can get values in a nested object', () => {
+  expect(findNested(fixture, 'a')).toBe(fixture.two.a)
+  expect(findNested(fixture, 'b')).toBe(fixture.two.b)
 })
 
-test('findKey can get values in a nested array', () => {
-  expect(findKey(fixture, 'i')).toBe(fixture.two.a[0].i)
-  expect(findKey(fixture, 'ii')).toBe(fixture.two.a[0].ii)
+test('findNested can get values in a nested array', () => {
+  expect(findNested(fixture, 'i')).toBe(fixture.two.a[0].i)
+  expect(findNested(fixture, 'ii')).toBe(fixture.two.a[0].ii)
 })
 
-test('findKey returns first value when there are duplicate keys', () => {
-  expect(findKey(fixture, '1')).toBe(fixture.two.a[0].ii[0]['1'])
+test('findNested returns first value when there are duplicate keys', () => {
+  expect(findNested(fixture, '1')).toBe(fixture.two.a[0].ii[0]['1'])
 })
+
+test('findNested returns', () => {
+  const result = findNested(fixture, '1', val => val === 'two')
+  expect(result).toBe(fixture.two.a[0].ii[1]['1'])
+})
+
+

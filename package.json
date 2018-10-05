@@ -1,10 +1,10 @@
 {
-  "name": "@ianwalter/find-key",
+  "name": "@ianwalter/find-nested",
   "version": "1.0.0",
   "description": "A utility that searches through nested layers for a keyed value",
-  "main": "dist/find-key.js",
-  "umd:main": "dist/find-key.umd.js",
-  "module": "dist/find-key.m.js",
+  "main": "dist/find-nested.js",
+  "umd:main": "dist/find-nested.umd.js",
+  "module": "dist/find-nested.m.js",
   "scripts": {
     "build": "microbundle build index.js",
     "watch": "microbundle watch index.js",
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ianwalter/find-key.git"
+    "url": "git+https://github.com/ianwalter/find-nested.git"
   },
   "keywords": [
     "find",
@@ -28,9 +28,9 @@
   "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ianwalter/find-key/issues"
+    "url": "https://github.com/ianwalter/find-nested/issues"
   },
-  "homepage": "https://github.com/ianwalter/find-key#readme",
+  "homepage": "https://github.com/ianwalter/find-nested#readme",
   "dependencies": {
     "is-obj": "^1.0.1"
   },
