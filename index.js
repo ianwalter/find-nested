@@ -7,11 +7,16 @@ module.exports = function findKey (obj, prop) {
       if (key === prop) {
         val = obj[key]
       } else if (Array.isArray(obj[key])) {
-        val = obj[key].find(i => findKey(i))
+        for (let item of obj[key]) {
+          val = findKey(item, prop)
+          if (val !== undefined) {
+            return val
+          }
+        }
       } else if (isObj(obj[key])) {
         val = findKey(obj[key], prop)
       }
-      if (val) {
+      if (val !== undefined) {
         return val
       }
     }

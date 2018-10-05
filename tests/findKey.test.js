@@ -5,11 +5,14 @@ const fixture = {
   two: {
     a: [
       {
-        i: 1,
-        ii: [1, 1]
+        i: '1',
+        ii: [
+          { '1': 'one' },
+          { '1': 'two' }
+        ]
       }
     ],
-    b: 'b'
+    b: 0
   }
 }
 
@@ -24,6 +27,10 @@ test('findKey can get values in a nested object', () => {
 })
 
 test('findKey can get values in a nested array', () => {
-  expect(findKey(fixture, 'i')).toBe(fixture.two.a.i)
-  expect(findKey(fixture, 'ii')).toBe(fixture.two.a.ii)
+  expect(findKey(fixture, 'i')).toBe(fixture.two.a[0].i)
+  expect(findKey(fixture, 'ii')).toBe(fixture.two.a[0].ii)
+})
+
+test('findKey returns first value when there are duplicate keys', () => {
+  expect(findKey(fixture, '1')).toBe(fixture.two.a[0].ii[0]['1'])
 })
