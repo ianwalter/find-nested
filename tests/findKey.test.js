@@ -39,5 +39,3 @@ test('findNested returns', () => {
   const result = findNested(fixture, '1', val => val === 'two')
   expect(result).toBe(fixture.two.a[0].ii[1]['1'])
 })
-
-
