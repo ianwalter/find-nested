@@ -12,7 +12,7 @@ through [blueline](https://github.com/ianwalter/blueline).
 ## Installation
 
 ```console
-npm install @ianwalter/find-nested
+npm install @ianwalter/find-nested --save
 ```
 
 ## Usage
