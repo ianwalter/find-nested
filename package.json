@@ -26,7 +26,7 @@
     "object"
   ],
   "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
-  "license": "ISC",
+  "license": "Apache 2.0 with Commons Clause",
   "bugs": {
     "url": "https://github.com/ianwalter/find-nested/issues"
   },

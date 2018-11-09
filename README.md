@@ -28,6 +28,10 @@ findNested(obj, 'someKeyName')
 findNested(obj, 'someKeyName', val => val.isActive)
 ```
 
+## License
+
+Apache 2.0 with Commons Clause - See [LICENSE](https://github.com/ianwalter/find-nested/blob/master/LICENSE)
+
 &nbsp;
 
-ISC &copy; [Ian Walter](http://iankwalter.com)
+Created by [Ian Walter](https://iankwalter.com)
