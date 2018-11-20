@@ -1,6 +1,8 @@
 # @ianwalter/find-nested
 > A utility that searches through nested layers for values
 
+[![build status][buildImage]][buildUrl]
+
 ## About
 
 `findNested` and `findAllNested` are a couple of simple recursive functions that
@@ -42,5 +44,7 @@ Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
 
 Created by [Ian Walter](https://iankwalter.com)
 
+[buildImage]: https://dev.azure.com/iankw/find-nested/_apis/build/status/ianwalter.find-nested
+[buildUrl]: https://dev.azure.com/iankw/find-nested/_build
 [bluelineUrl]: https://github.com/ianwalter/blueline
 [licenseUrl]: https://github.com/ianwalter/find-nested/blob/master/LICENSE
