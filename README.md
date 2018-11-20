@@ -3,11 +3,11 @@
 
 ## About
 
-`findNested` is a simple recursive function that returns the first value found
-that is assigned to a given key and/or passes a given descriminator function.
-I wrote this in order to more easily retrieve values from JSON objects with
-multiple layers of nesting that were generated from converting API Blueprints to
-JSON with [blueline](https://github.com/ianwalter/blueline).
+`findNested` and `findAllNested` are a couple of simple recursive functions that
+return the first value or all values (respectively) that are assigned to a given
+key and/or pass a given filter function. I wrote this in order to more easily
+retrieve values from JSON objects with multiple layers of nesting that were
+generated from converting API Blueprints to JSON with [blueline][bluelineUrl].
 
 ## Installation
 
@@ -27,15 +27,11 @@ findNested(obj, 'someKeyName')
 // descriminator function to return true:
 findNested(obj, 'someKeyName', val => val.isActive)
 
-// Returns all instances in an array (thats why the key name is null) that have
-// a body property, a headers property, the headers property is an array, and
-// the headers property contains at least one object with a value property that
-// includes the string 'application/json'.
-const hasJsonBody = obj => obj.body &&
-  obj.headers &&
-  Array.isArray(obj.headers) &&
-  obj.headers.some(header => header.value.includes('application/json'))
-findAllNested(obj, null, hasJsonBody)
+// Returns all objects in an array (thats why the key name is undefined) that
+// have a headers property with an array that contains at least one object with
+// a value property that includes the string 'json'.
+const hasJsonBody = obj => obj.headers.some(h => h.value.includes('json'))
+findAllNested(obj, undefined, hasJsonBody)
 ```
 
 ## License
@@ -46,4 +42,5 @@ Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
 
 Created by [Ian Walter](https://iankwalter.com)
 
+[bluelineUrl]: https://github.com/ianwalter/blueline
 [licenseUrl]: https://github.com/ianwalter/find-nested/blob/master/LICENSE

@@ -6,8 +6,8 @@
   "umd:main": "dist/find-nested.umd.js",
   "module": "dist/find-nested.m.js",
   "scripts": {
-    "build": "microbundle build index.js",
-    "watch": "microbundle watch index.js",
+    "build": "microbundle build index.js --no-compress",
+    "watch": "microbundle watch index.js --no-compress",
     "test": "npm run build && jest",
     "lint": "eslint --ext js index.js tests"
   },
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/ianwalter/find-nested#readme",
   "dependencies": {
-    "is-obj": "^1.0.1"
+    "is-plain-obj": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^5.7.0",

@@ -1,0 +1,56 @@
+{
+  "name": "Joe",
+  "meals": [
+    {
+      "type": "Dinner",
+      "value": "Burrito"
+    },
+    {
+      "type": "Breakfast",
+      "value": "Eggs"
+    }
+  ],
+  "brother": {
+    "name": "Bo",
+    "job": "Baker",
+    "meals": [
+      {
+        "type": "Dinner",
+        "value": "Steak"
+      },
+      {
+        "type": "Lunch",
+        "value": "Grinder"
+      }
+    ],
+    "sports": [
+      { "league": "NFL" }
+    ]
+  },
+  "sister": {
+    "name": "Flo",
+    "meals": [
+      {
+        "type": "Dinner",
+        "value": "Caesar Salad"
+      },
+      {
+        "type": "Lunch",
+        "value": "Pasta Salad"
+      },
+      {
+        "type": "Breakfast",
+        "value": "Bacon"
+      }
+    ],
+    "colors": {
+      "favorite": "Tangerine"
+    },
+    "outfit": [
+      {
+        "category": "Shoes",
+        "value": "Ballet Flats"
+      }
+    ]
+  }
+}
