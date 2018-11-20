@@ -5,13 +5,13 @@ pool:
 
 steps:
 
-  - displayName: 'Install Node.js'
-    task: NodeTool@0
+  - task: NodeTool@0
     inputs:
       versionSpec: '11.x'
+    displayName: 'Install Node.js'
 
-  - displayName: 'Install and Test'
-    script: |
+  - script: |
       yarn
       yarn lint
       yarn test
+    displayName: 'Install and Test'
