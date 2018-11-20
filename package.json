@@ -1,6 +1,6 @@
 {
   "name": "@ianwalter/find-nested",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A utility that searches through nested layers for a keyed value",
   "main": "dist/find-nested.js",
   "umd:main": "dist/find-nested.umd.js",
