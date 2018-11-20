@@ -8,20 +8,23 @@ function find (single, src, key, filter = notUndefined, debug, instances = []) {
     const items = isObject ? Object.entries(src) : src.map(i => [undefined, i])
     for (let [name, item] of items) {
       let match = key === name ? item : undefined
-      if (Array.isArray(item) || isObj(item)) {
-        find(single, item, key, filter, debug, instances)
-      }
       try {
         if (filter(match)) {
           instances.push(match)
-        }
-        if (single && instances.length) {
-          break
+          if (single) {
+            break
+          }
         }
       } catch (err) {
         if (debug) {
           console.debug(err)
         }
+      }
+      if (Array.isArray(item) || isObj(item)) {
+        find(single, item, key, filter, debug, instances)
+      }
+      if (single && instances.length) {
+        break
       }
     }
     return single ? instances[0] : instances

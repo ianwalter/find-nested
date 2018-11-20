@@ -1,5 +1,6 @@
 const { findNested } = require('../')
 const user = require('./fixtures/user.json')
+const pets = require('./fixtures/pets.json')
 
 test('findNested can get top-level values', () => {
   expect(findNested(user, 'name')).toBe(user.name)
@@ -22,4 +23,9 @@ test('findNested can get values passing a given filter', () => {
   expect(meal).toBe(user.brother.meals[1])
   const meals = findNested(user, 'meals', m => m.some(isLunch))
   expect(meals).toBe(user.brother.meals)
+})
+
+test('findNested can get values from array source', () => {
+  expect(findNested(pets)).toBe(pets[0])
+  expect(findNested(pets, undefined, o => o.name === 'Helen')).toBe(pets[2])
 })

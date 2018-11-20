@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Sparky",
+    "toys": [
+      {
+        "name": "Bone"
+      },
+      {
+        "name": "Frisbee"
+      }
+    ]
+  },
+  {
+    "name": "Champ"
+  },
+  {
+    "name": "Helen"
+  }
+]
