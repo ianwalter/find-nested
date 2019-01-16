@@ -1,7 +1,7 @@
 # @ianwalter/find-nested
 > A utility that searches through nested layers for values
 
-[![build status][buildImage]][buildUrl]
+[![npm page][npmImage]][npmUrl]
 
 ## About
 
@@ -14,7 +14,7 @@ generated from converting API Blueprints to JSON with [blueline][bluelineUrl].
 ## Installation
 
 ```console
-npm install @ianwalter/find-nested --save
+yarn add @ianwalter/find-nested
 ```
 
 ## Usage
@@ -44,7 +44,6 @@ Apache 2.0 with Commons Clause - See [LICENSE][licenseUrl]
 
 Created by [Ian Walter](https://iankwalter.com)
 
-[buildImage]: https://dev.azure.com/iankw/find-nested/_apis/build/status/ianwalter.find-nested
-[buildUrl]: https://dev.azure.com/iankw/find-nested/_build
-[bluelineUrl]: https://github.com/ianwalter/blueline
+[npmImage]: https://img.shields.io/npm/v/@ianwalter/find-nested.svg
+[npmUrl]: https://www.npmjs.com/package/@ianwalter/find-nested
 [licenseUrl]: https://github.com/ianwalter/find-nested/blob/master/LICENSE

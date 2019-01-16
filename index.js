@@ -1,11 +1,10 @@
-import isObj from 'is-plain-obj'
-
 const notUndefined = val => val !== undefined
 
 function find (single, src, key, filter = notUndefined, debug, instances = []) {
-  const isObject = isObj(src)
-  if (isObject || Array.isArray(src)) {
-    const items = isObject ? Object.entries(src) : src.map(i => [undefined, i])
+  if (typeof src === 'object') {
+    const items = Array.isArray(src)
+      ? src.map(i => [undefined, i])
+      : Object.entries(src)
     for (let [name, item] of items) {
       let match = key === name ? item : undefined
       try {
@@ -20,7 +19,7 @@ function find (single, src, key, filter = notUndefined, debug, instances = []) {
           console.debug(err)
         }
       }
-      if (Array.isArray(item) || isObj(item)) {
+      if (typeof item === 'object') {
         find(single, item, key, filter, debug, instances)
       }
       if (single && instances.length) {
