@@ -1,6 +1,6 @@
 {
   "name": "@ianwalter/find-nested",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A utility that searches through nested layers for values",
   "main": "dist/find-nested.js",
   "module": "dist/find-nested.m.js",
