@@ -1,7 +1,7 @@
 const notUndefined = val => val !== undefined
 
 function find (single, src, key, filter = notUndefined, debug, instances = []) {
-  if (typeof src === 'object') {
+  if (src && typeof src === 'object') {
     const items = Array.isArray(src)
       ? src.map(i => [undefined, i])
       : Object.entries(src)
@@ -19,7 +19,7 @@ function find (single, src, key, filter = notUndefined, debug, instances = []) {
           console.debug(err)
         }
       }
-      if (typeof item === 'object') {
+      if (item && typeof item === 'object') {
         find(single, item, key, filter, debug, instances)
       }
       if (single && instances.length) {
