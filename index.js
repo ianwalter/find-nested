@@ -5,8 +5,8 @@ function find (single, src, key, filter = notUndefined, debug, instances = []) {
     const items = Array.isArray(src)
       ? src.map(i => [undefined, i])
       : Object.entries(src)
-    for (let [name, item] of items) {
-      let match = key === name ? item : undefined
+    for (const [name, item] of items) {
+      const match = key === name ? item : undefined
       try {
         if (filter(match)) {
           instances.push(match)
