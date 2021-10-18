@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/ianwalter/find-nested#readme",
   "devDependencies": {
-    "@ianwalter/bff": "^9.9.1",
+    "@ianwalter/bff": "^11.1.1",
     "@ianwalter/dist": "^6.0.0",
     "@ianwalter/eslint-config": "^6.2.0",
     "@ianwalter/release": "^5.0.2",
